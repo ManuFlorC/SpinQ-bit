@@ -1,0 +1,311 @@
+/* ==========================================================================
+   VARIABLES DE COLOR (TU PALETA FOSFORESCENTE)
+   ========================================================================== */
+:root {
+    --fondo-negro: #09090d;       /* Negro profundo para que los neones brillen al máximo */
+    --fondo-tarjeta: #12121a;     /* Gris muy oscuro para contrastar bloques */
+    --neon-rosa: #ff007f;         /* 1. Rosa fosforescente */
+    --neon-amarillo: #f6ff00;     /* 2. Amarillo fosforescente */
+    --neon-verde: #00ff66;        /* 3. Verde fosforescente */
+    --texto-blanco: #f4f4f8;      /* Blanco ligeramente suave para no cansar la vista */
+}
+
+/* ==========================================================================
+   CONFIGURACIÓN GENERAL Y TIPOGRAFÍA
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en el menú */
+}
+
+body {
+    background-color: var(--fondo-negro);
+    color: var(--texto-blanco);
+    font-family: 'Space Grotesk', sans-serif; /* Fuente moderna y súper leíble */
+    line-height: 1.6;
+    overflow-x: hidden;
+    /* Patrón de cuadrícula cyberpunk sutil en el fondo */
+    background-image: 
+        linear-gradient(rgba(0, 255, 102, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 0, 127, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+h1, h2, h3, h4, .logo, .btn {
+    font-family: 'Chakra Petch', sans-serif; /* Fuente agresiva y futurista para títulos */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* ==========================================================================
+   BARRA DE NAVEGACIÓN
+   ========================================================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: rgba(9, 9, 13, 0.95);
+    border-bottom: 2px solid var(--neon-rosa);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    color: var(--neon-verde);
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-shadow: 0 0 8px var(--neon-verde);
+}
+
+.navbar nav a {
+    color: var(--texto-blanco);
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.navbar nav a:hover {
+    color: var(--neon-amarillo);
+}
+
+.btn-nav {
+    background-color: var(--neon-rosa);
+    color: #000 !important;
+    padding: 0.4rem 0.8rem;
+    border-radius: 3px;
+}
+
+/* ==========================================================================
+   PORTADA (HERO SECTION)
+   ========================================================================== */
+.hero {
+    text-align: center;
+    padding: 5rem 5% 4rem;
+    border-bottom: 2px dashed var(--neon-amarillo);
+}
+
+.badge-alerta {
+    display: inline-block;
+    background-color: var(--neon-amarillo);
+    color: #000;
+    font-weight: 700;
+    padding: 0.3rem 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+    transform: skew(-10deg); /* Toque agresivo inclinado */
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 6vw, 4.5rem); /* Se adapta solo a móvil y ordenador */
+    color: var(--texto-blanco);
+    text-shadow: 3px 3px 0px var(--neon-rosa), -3px -3px 0px var(--neon-verde);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.subtitulo {
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    font-size: 1.15rem;
+}
+
+/* ==========================================================================
+   BOTONES FOSFORESCENTES
+   ========================================================================== */
+.hero-botones, .botones-contacto {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.9rem 1.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: #000;
+    border-radius: 4px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn-rosa {
+    background-color: var(--neon-rosa);
+    box-shadow: 0 0 15px rgba(255, 0, 127, 0.6);
+}
+
+.btn-verde {
+    background-color: var(--neon-verde);
+    box-shadow: 0 0 15px rgba(0, 255, 102, 0.6);
+}
+
+/* ==========================================================================
+   SECCIONES Y TARJETAS
+   ========================================================================== */
+.seccion {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 5%;
+}
+
+.titulo-seccion {
+    font-size: 2rem;
+    color: var(--neon-amarillo);
+    margin-bottom: 0.5rem;
+    border-left: 5px solid var(--neon-rosa);
+    padding-left: 1rem;
+}
+
+.intro-seccion {
+    margin-bottom: 2rem;
+    color: #b8b8c7;
+}
+
+/* Bordes neón reutilizables */
+.borde-rosa { border: 2px solid var(--neon-rosa); box-shadow: 0 0 12px rgba(255, 0, 127, 0.25); }
+.borde-amarillo { border: 2px solid var(--neon-amarillo); box-shadow: 0 0 12px rgba(246, 255, 0, 0.25); }
+.borde-verde { border: 2px solid var(--neon-verde); box-shadow: 0 0 12px rgba(0, 255, 102, 0.25); }
+
+/* Grids responsivos */
+.grid-lore, .grid-videos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.grid-banda {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.tarjeta, .ficha-miembro {
+    background-color: var(--fondo-tarjeta);
+    padding: 2rem;
+    border-radius: 6px;
+}
+
+.tarjeta h3, .ficha-miembro h3 {
+    color: var(--neon-verde);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.tarjeta p {
+    margin-bottom: 1rem;
+}
+
+/* Estilo especial para la caja cutre de CUQUI */
+.cuqui-avatar pre {
+    color: var(--neon-rosa);
+    font-weight: bold;
+    font-size: 0.95rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Fichas de los miembros */
+.rol {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--neon-amarillo);
+    margin-bottom: 0.5rem;
+}
+
+.stats {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #2a2a38;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--neon-rosa);
+}
+
+/* ==========================================================================
+   CONTENEDOR DE VIDEOS RESPONSIVOS
+   ========================================================================== */
+.contenedor-video {
+    background-color: var(--fondo-tarjeta);
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+.video-responsive {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporción 16:9 exacta */
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.video-responsive iframe, .video-responsive video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* ==========================================================================
+   CAJA DE RECLUTAMIENTO FINAL
+   ========================================================================== */
+.caja-reclutamiento {
+    background-color: var(--fondo-tarjeta);
+    border: 3px solid var(--neon-verde);
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.lista-requisitos {
+    list-style: none;
+    text-align: left;
+    max-width: 650px;
+    margin: 2rem auto;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 1.5rem;
+    border-left: 4px solid var(--neon-amarillo);
+}
+
+.lista-requisitos li {
+    margin-bottom: 0.8rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid #222;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+/* Ajustes para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    .navbar nav a {
+        margin: 0 0.5rem;
+        font-size: 0.8rem;
+    }
+}
